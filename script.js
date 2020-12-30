@@ -8,7 +8,7 @@ generateBtn.addEventListener("click", function () {
   //   const generateDisplayNum = parseInt(generateDisplay);
   generateDisplay.value = generatePin;
 });
-const buttons = document.querySelectorAll(".button");
+const buttons = document.querySelectorAll(".btn");
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
     let number = buttons[i].getAttribute("data-num");
@@ -25,4 +25,14 @@ submitBtn.addEventListener("click", function () {
     }else{
         pinWrong.style.display = "block";
     }
+    pinDisplay.value = " ";
+    generateDisplay.value = " ";
 });
+const clearBtn = document.getElementById("btn-clear");
+clearBtn.addEventListener("click",function(){
+    pinDisplay.value = "";
+})
+const btnDelete = document.getElementById("btn-delete");
+btnDelete.addEventListener("click",function(){
+    pinDisplay.value = pinDisplay.value.slice(0, -1)
+})
